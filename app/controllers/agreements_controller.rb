@@ -10,8 +10,11 @@ class AgreementsController < ApplicationController
   def create
     @agreement = Agreement.new(agreement_params)
 
+    puts "FILE: "
+    file = @agreement.attachment
+
     if @agreement.save
-      redirect_to agreement_path, notice: "The agreement #{@agreement.name} has been uploaded."
+      redirect_to '/agreements', notice: "The agreement #{@agreement.name} has been uploaded."
     else
       render 'new'
     end
@@ -20,12 +23,11 @@ class AgreementsController < ApplicationController
   def destroy
     @agreement = Agreement.find(params[:id])
     @agreement.destroy
-    redirect_to agreement_path, notice: "The agreement #{@agreement.name} has been deleted"
+    redirect_to '/agreements', notice: "The agreement #{@agreement.name} has been deleted"
   end
 
   private
     def agreement_params
       params.require(:agreement).permit(:name, :attachment)
     end
-  end
 end
