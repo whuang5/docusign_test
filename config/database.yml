@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: docusign_test_production
   username: docusign_test
   password: <%= ENV['DOCUSIGN_TEST_DATABASE_PASSWORD'] %>
