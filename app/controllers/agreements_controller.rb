@@ -8,10 +8,14 @@ class AgreementsController < ApplicationController
   end
 
   def create
-    @agreement = Agreement.new(agreement_params)
+    #make status pending
+    params = agreement_params
+    params[:status] = "pending"
 
-    puts "FILE: "
-    file = @agreement.attachment
+    @agreement = Agreement.new(params)
+
+    # puts "FILE: "
+    # file = @agreement.attachment
 
     if @agreement.save
       redirect_to '/agreements', notice: "The agreement #{@agreement.name} has been uploaded."
@@ -28,6 +32,6 @@ class AgreementsController < ApplicationController
 
   private
     def agreement_params
-      params.require(:agreement).permit(:name, :attachment)
+      params.require(:agreement).permit(:name, :attachment, :emails, :status)
     end
 end

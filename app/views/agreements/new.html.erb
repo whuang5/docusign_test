@@ -12,8 +12,17 @@
    <%= form_for @agreement, html: { multipart: true } do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
+      <br />
+
+      <%= f.label :emails %>
+      <%= f.text_field :emails %>
+      <span>Please seperate emails by commas :)</span>
+      <br />
+
       <%= f.label :attachment %>
       <%= f.file_field :attachment %>
+      <br />
+      
       <%= f.submit "Save", class: "btn btn-primary" %>
    <% end %>
 </div>
