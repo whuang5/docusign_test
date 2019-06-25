@@ -1,5 +1,5 @@
 require 'crack'
-require 'docusign_esign'
+
 class WebhookController < ApplicationController
   def create
     #Do something with webhook response
@@ -82,5 +82,3 @@ class WebhookController < ApplicationController
     #Change Status to completed
   end
 end
-
-WebhookController.create
