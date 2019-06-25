@@ -1,6 +1,7 @@
 require 'crack'
 
 class WebhookController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def create
     #Do something with webhook response
     results = request.body
