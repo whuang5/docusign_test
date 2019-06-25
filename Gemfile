@@ -55,3 +55,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#json ==> xml parser
+gem 'crack'
+
+#docusign gem ruby client
+gem 'docusign_esign'
