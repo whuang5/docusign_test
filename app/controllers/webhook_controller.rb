@@ -75,7 +75,7 @@ class WebhookController < ApplicationController
       temp_file = envelope_api.get_document(account_id, document_id, envelope_id)
       old_file = File.new(temp_file.path)
 
-      new_file_path = "#{::Rails.root}/uploads/agreement/"
+      new_file_path = "#{::Rails.root}/public/uploads/agreement/"
       puts "NEW FILE PATH: #{new_file_path}"
 
       FileUtils.cp(old_file.path, new_file_path)
