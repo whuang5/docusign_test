@@ -17,14 +17,19 @@ class AgreementsController < ApplicationController
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
     account_id = ENV['DOCUSIGN_ACCOUNT_ID']
     signer_name = params[:name]
-    signer_email = params[:emails].downcase #Need to fix to split into multiple emails
+    signer_email = params[:emails].downcase #Need to remember to split into multiple emails
 
     #Create and Save new agreement in DB
     @agreement = Agreement.new(params)
 
+    puts params[:attachment].path
+    puts File.extname params[:attachment].path
+
     #Get File Path & Extension
     file_path = @agreement.attachment.file.path
     file_extension = @agreement.attachment.file.extension
+    puts file_path
+    puts file_extension
 
     #docusign config base path
     base_path = 'http://demo.docusign.net/restapi'
