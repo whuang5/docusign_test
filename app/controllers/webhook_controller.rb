@@ -49,6 +49,8 @@ class WebhookController < ApplicationController
 
     email = recipient_status['Email'].downcase
     status = recipient_status['Status'].downcase
+    puts "STATUS: "
+    puts status
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']["ID"]
     envelope_id = envelope_status['EnvelopeID']
 
@@ -67,6 +69,7 @@ class WebhookController < ApplicationController
     #Get Agreenent variable
     @agreement = Agreement.find_by(:envelope_id => envelope_id)
     @agreement.status = status
+    puts @agreement.status
 
     if status == 'completed'
       temp_file = envelope_api.get_document(account_id, document_id, envelope_id)
