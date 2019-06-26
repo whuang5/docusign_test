@@ -5,6 +5,7 @@ class CreateAgreements < ActiveRecord::Migration[6.0]
       t.string :status
       t.string :emails
       t.string :attachment
+      t.string :envelope_id
       t.timestamps
     end
   end

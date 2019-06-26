@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_180146) do
     t.string "status"
     t.string "emails"
     t.string "attachment"
+    t.string "envelope_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

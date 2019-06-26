@@ -29,16 +29,16 @@ class AgreementsController < ApplicationController
     #docusign config base path
     base_path = 'http://demo.docusign.net/restapi'
 
-    #Create Envelope
+    #Create Envelope Definition
     envelope_definition = DocuSign_eSign::EnvelopeDefinition.new
     envelope_definition.email_subject = "Sent via dummy App"
 
-    #create document
+    #create document to put inside envelope
     doc = DocuSign_eSign::Document.new({
       :documentBase64 => Base64.encode64(File.binread(file_path.to_s)),
       :name => 'Test', :fileExtension => file_extension, :documentId => '1'
     })
-    envelope_definition.documents = [doc]
+    envelope_definition.documents = [doc] #can include multiple documents
 
     #create signer
     signer = DocuSign_eSign::Signer.new({
@@ -70,12 +70,17 @@ class AgreementsController < ApplicationController
     configuration.host = base_path
     api_client = DocuSign_eSign::ApiClient.new(configuration)
     api_client.default_headers["Authorization"] = "Bearer " + access_token
-
     envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
 
+    #Send Request to Docusign
     results = envelopes_api.create_envelope(account_id, envelope_definition)
-    puts 'RESULTS: '
+    puts 'RESULTS'
     puts results
+
+    params[:envelope_id] = results.envelope_id
+    puts params
+    #save new agreement
+    @agreement = Agreement.new(params)
 
     if @agreement.save
       redirect_to agreements_path, notice: "The agreement #{@agreement.name} has been uploaded."
@@ -92,6 +97,6 @@ class AgreementsController < ApplicationController
 
   private
     def agreement_params
-      params.require(:agreement).permit(:name, :attachment, :emails, :status)
+      params.require(:agreement).permit(:name, :attachment, :emails, :status, :envelope_id)
     end
 end
