@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_180146) do
     t.string "status"
     t.string "emails"
     t.string "attachment"
+    t.string "completed_attachment"
     t.string "original_name"
     t.string "content_type"
     t.string "file_size"

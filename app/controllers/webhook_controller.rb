@@ -47,9 +47,6 @@ class WebhookController < ApplicationController
     recipient_status = parsedResults['DocuSignEnvelopeInformation']['EnvelopeStatus']['RecipientStatuses']['RecipientStatus']
     envelope_status = parsedResults['DocuSignEnvelopeInformation']['EnvelopeStatus']
 
-    puts recipient_status
-    puts envelope_status
-    
     email = recipient_status['Email'].downcase
     status = recipient_status['Status'].downcase
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']["ID"]

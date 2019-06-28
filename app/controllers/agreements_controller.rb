@@ -5,6 +5,7 @@ class AgreementsController < ApplicationController
 
   def new
     @agreement = Agreement.new
+    @choices = ['pdf_form', 'upload', 'template']
   end
 
   def create
@@ -27,9 +28,6 @@ class AgreementsController < ApplicationController
     file_path = @agreement.attachment.file.path
     file_extension = @agreement.attachment.file.extension
     file_name = File.basename(file_path)
-
-    #docusign config base path
-    base_path = 'http://demo.docusign.net/restapi'
 
     #Create Envelope Definition
     envelope_definition = DocuSign_eSign::EnvelopeDefinition.new
@@ -68,16 +66,16 @@ class AgreementsController < ApplicationController
     envelope_definition.status = 'sent' #this means send immediately
 
     #Send Envelope!
+    base_path = 'http://demo.docusign.net/restapi'
     configuration = DocuSign_eSign::Configuration.new
     configuration.host = base_path
     api_client = DocuSign_eSign::ApiClient.new(configuration)
     api_client.default_headers["Authorization"] = "Bearer " + access_token
     envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
 
+    puts envelope_definition
     #Send Request to Docusign
     results = envelopes_api.create_envelope(account_id, envelope_definition)
-    puts 'RESULTS'
-    puts results
 
     #save new agreement
     params[:envelope_id] = results.envelope_id
@@ -85,7 +83,7 @@ class AgreementsController < ApplicationController
     @agreement = Agreement.new(params)
 
     if @agreement.save
-      redirect_to agreements_path, notice: "The agreement #{@agreement.name} has been uploaded."
+      redirect_to agreements_path, notice: "The Uploaded Agreement has been uploaded."
     else
       render 'new'
     end
@@ -94,7 +92,7 @@ class AgreementsController < ApplicationController
   def destroy
     @agreement = Agreement.find(params[:id])
     @agreement.destroy
-    redirect_to agreements_path, notice: "The agreement #{@agreement.name} has been deleted"
+    redirect_to agreements_path, notice: "The Uploaded Agreement has been deleted"
   end
 
   private
