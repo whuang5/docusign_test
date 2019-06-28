@@ -3,12 +3,12 @@ require 'crack'
 class WebhookController < ApplicationController
   skip_before_action :verify_authenticity_token
   def create
-    #Do something with webhook
-    xml = '<?xml version="1.0" encoding="utf-8"?><DocuSignEnvelopeInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.docusign.net/API/3.0"><EnvelopeStatus><RecipientStatuses><RecipientStatus><Type>Signer</Type><Email>williamhuang0623@gmail.com</Email><UserName>Billy Huang</UserName><RoutingOrder>1</RoutingOrder><Sent>2019-06-25T13:13:03.267</Sent><Delivered>2019-06-25T13:13:31.623</Delivered><Signed>2019-06-25T13:14:27.39</Signed><DeclineReason xsi:nil="true" /><Status>Completed</Status><RecipientIPAddress>65.223.155.202</RecipientIPAddress><CustomFields /><TabStatuses><TabStatus><TabType>SignHere</TabType><Status>Signed</Status><XPosition>839</XPosition><YPosition>568</YPosition><TabLabel>SignHereTab</TabLabel><TabName>SignHere</TabName><TabValue /><DocumentID>1</DocumentID><PageNumber>2</PageNumber></TabStatus><TabStatus><TabType>SignHere</TabType><Status>Signed</Status><XPosition>568</XPosition><YPosition>929</YPosition><TabLabel>SignHereTab</TabLabel><TabName>SignHere</TabName><TabValue /><DocumentID>1</DocumentID><PageNumber>14</PageNumber></TabStatus><TabStatus><TabType>SignHere</TabType><Status>Signed</Status><XPosition>718</XPosition><YPosition>972</YPosition><TabLabel>SignHereTab</TabLabel><TabName>SignHere</TabName><TabValue /><DocumentID>1</DocumentID><PageNumber>14</PageNumber></TabStatus></TabStatuses><AccountStatus>Active</AccountStatus><RecipientId>85b82a69-1d64-498b-84e1-5043ad9414bc</RecipientId></RecipientStatus></RecipientStatuses><TimeGenerated>2019-06-25T13:14:47.5542209</TimeGenerated><EnvelopeID>0147df4c-0144-433b-aac5-55285fe7dbbf</EnvelopeID><Subject>Sent via dummy App</Subject><UserName>William Huang</UserName><Email>william.huang5@wework.com</Email><Status>Completed</Status><Created>2019-06-25T13:13:00.813</Created><Sent>2019-06-25T13:13:03.327</Sent><Delivered>2019-06-25T13:13:31.81</Delivered><Signed>2019-06-25T13:14:27.39</Signed><Completed>2019-06-25T13:14:27.39</Completed><ACStatus>Original</ACStatus><ACStatusDate>2019-06-25T13:13:00.813</ACStatusDate><ACHolder>William Huang</ACHolder><ACHolderEmail>william.huang5@wework.com</ACHolderEmail><ACHolderLocation>DocuSign</ACHolderLocation><SigningLocation>Online</SigningLocation><SenderIPAddress>65.223.155.202 </SenderIPAddress><EnvelopePDFHash /><CustomFields /><AutoNavigation>true</AutoNavigation><EnvelopeIdStamping>true</EnvelopeIdStamping><AuthoritativeCopy>false</AuthoritativeCopy><DocumentStatuses><DocumentStatus><ID>1</ID><Name>Test</Name><TemplateName /><Sequence>1</Sequence></DocumentStatus></DocumentStatuses></EnvelopeStatus><TimeZone>Pacific Standard Time</TimeZone><TimeZoneOffset>-7</TimeZoneOffset></DocuSignEnvelopeInformation>'
+    #Sample XML for testing
+    #xml = '<?xml version="1.0" encoding="utf-8"?><DocuSignEnvelopeInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.docusign.net/API/3.0"><EnvelopeStatus><RecipientStatuses><RecipientStatus><Type>Signer</Type><Email>williamhuang0623@gmail.com</Email><UserName>Billy Huang</UserName><RoutingOrder>1</RoutingOrder><Sent>2019-06-25T13:13:03.267</Sent><Delivered>2019-06-25T13:13:31.623</Delivered><Signed>2019-06-25T13:14:27.39</Signed><DeclineReason xsi:nil="true" /><Status>Completed</Status><RecipientIPAddress>65.223.155.202</RecipientIPAddress><CustomFields /><TabStatuses><TabStatus><TabType>SignHere</TabType><Status>Signed</Status><XPosition>839</XPosition><YPosition>568</YPosition><TabLabel>SignHereTab</TabLabel><TabName>SignHere</TabName><TabValue /><DocumentID>1</DocumentID><PageNumber>2</PageNumber></TabStatus><TabStatus><TabType>SignHere</TabType><Status>Signed</Status><XPosition>568</XPosition><YPosition>929</YPosition><TabLabel>SignHereTab</TabLabel><TabName>SignHere</TabName><TabValue /><DocumentID>1</DocumentID><PageNumber>14</PageNumber></TabStatus><TabStatus><TabType>SignHere</TabType><Status>Signed</Status><XPosition>718</XPosition><YPosition>972</YPosition><TabLabel>SignHereTab</TabLabel><TabName>SignHere</TabName><TabValue /><DocumentID>1</DocumentID><PageNumber>14</PageNumber></TabStatus></TabStatuses><AccountStatus>Active</AccountStatus><RecipientId>85b82a69-1d64-498b-84e1-5043ad9414bc</RecipientId></RecipientStatus></RecipientStatuses><TimeGenerated>2019-06-25T13:14:47.5542209</TimeGenerated><EnvelopeID>0147df4c-0144-433b-aac5-55285fe7dbbf</EnvelopeID><Subject>Sent via dummy App</Subject><UserName>William Huang</UserName><Email>william.huang5@wework.com</Email><Status>Completed</Status><Created>2019-06-25T13:13:00.813</Created><Sent>2019-06-25T13:13:03.327</Sent><Delivered>2019-06-25T13:13:31.81</Delivered><Signed>2019-06-25T13:14:27.39</Signed><Completed>2019-06-25T13:14:27.39</Completed><ACStatus>Original</ACStatus><ACStatusDate>2019-06-25T13:13:00.813</ACStatusDate><ACHolder>William Huang</ACHolder><ACHolderEmail>william.huang5@wework.com</ACHolderEmail><ACHolderLocation>DocuSign</ACHolderLocation><SigningLocation>Online</SigningLocation><SenderIPAddress>65.223.155.202 </SenderIPAddress><EnvelopePDFHash /><CustomFields /><AutoNavigation>true</AutoNavigation><EnvelopeIdStamping>true</EnvelopeIdStamping><AuthoritativeCopy>false</AuthoritativeCopy><DocumentStatuses><DocumentStatus><ID>1</ID><Name>Test</Name><TemplateName /><Sequence>1</Sequence></DocumentStatus></DocumentStatuses></EnvelopeStatus><TimeZone>Pacific Standard Time</TimeZone><TimeZoneOffset>-7</TimeZoneOffset></DocuSignEnvelopeInformation>'
     results = request.body
-    parsedResults = Crack::XML.parse(results)
+    parsedResults = Crack::XML.parse(results) #Parse XML --> JSON
 
-    # Sample Parsed Result
+    # Sample Parsed JSON For Reference
     # {"DocuSignEnvelopeInformation"=>
     #   {"EnvelopeStatus"=>
     #     {"RecipientStatuses"=>
@@ -47,6 +47,9 @@ class WebhookController < ApplicationController
     recipient_status = parsedResults['DocuSignEnvelopeInformation']['EnvelopeStatus']['RecipientStatuses']['RecipientStatus']
     envelope_status = parsedResults['DocuSignEnvelopeInformation']['EnvelopeStatus']
 
+    puts recipient_status
+    puts envelope_status
+    
     email = recipient_status['Email'].downcase
     status = recipient_status['Status'].downcase
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']["ID"]
@@ -64,7 +67,7 @@ class WebhookController < ApplicationController
     api_client.default_headers['Authorization'] = "Bearer #{temp_access_token}"
     envelope_api = DocuSign_eSign::EnvelopesApi.new(api_client)
 
-    #Get Agreenent variables
+    #Get Agreement variables
     @agreement = Agreement.find_by(:envelope_id => envelope_id)
     @agreement.status = status #change status to new status
     original_name = @agreement.original_name
@@ -74,18 +77,16 @@ class WebhookController < ApplicationController
       temp_file = envelope_api.get_document(account_id, document_id, envelope_id)
       old_agreement = @agreement.attachment
       id = @agreement.id
-      puts "OLD AGREEMENT: "
-      puts old_agreement
-      puts id
 
+      #Move template to existing disk location
       new_file_path = "#{::Rails.root}/public/uploads/agreement/attachment/#{id}/#{original_name}_signed.pdf"
-
       FileUtils.cp(temp_file.path, new_file_path)
       new_file = File.new(new_file_path)
 
-      puts new_file
+      #save new file
       @agreement.attachment = new_file #save path in database (go retrieve path)
 
+      #delete stored temp_file
       temp_file.delete
     end
 
