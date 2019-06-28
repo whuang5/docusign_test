@@ -73,16 +73,18 @@ class WebhookController < ApplicationController
     if status == 'completed'
       temp_file = envelope_api.get_document(account_id, document_id, envelope_id)
       old_agreement = @agreement.attachment
+      id = @agreement.id
       puts "OLD AGREEMENT: "
       puts old_agreement
+      puts id
 
-      new_file_path = "#{::Rails.root}/public/uploads/agreement/#{original_name}.pdf"
+      new_file_path = "#{::Rails.root}/public/uploads/agreement/attachment/#{id}/#{original_name}_signed.pdf"
 
       FileUtils.cp(temp_file.path, new_file_path)
       new_file = File.new(new_file_path)
 
-      puts file
-      @agreement.attachment = file #save path in database (go retrieve path)
+      puts new_file
+      @agreement.attachment = new_file #save path in database (go retrieve path)
 
       temp_file.delete
     end
