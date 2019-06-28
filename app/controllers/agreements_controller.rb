@@ -12,6 +12,7 @@ class AgreementsController < ApplicationController
     #https://github.com/docusign/eg-03-ruby-auth-code-grant/blob/master/app/controllers/eg007_envelope_get_doc_controller.rb
     params = agreement_params
     params[:status] = "pending"
+    puts params
 
     #Set up email sending
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
@@ -22,14 +23,10 @@ class AgreementsController < ApplicationController
     #Create and Save new agreement in DB
     @agreement = Agreement.new(params)
 
-    puts params[:attachment].path
-    puts File.extname params[:attachment].path
-
     #Get File Path & Extension
     file_path = @agreement.attachment.file.path
     file_extension = @agreement.attachment.file.extension
-    puts file_path
-    puts file_extension
+    file_name = File.basename(file_path)
 
     #docusign config base path
     base_path = 'http://demo.docusign.net/restapi'
@@ -40,8 +37,8 @@ class AgreementsController < ApplicationController
 
     #create document to put inside envelope
     doc = DocuSign_eSign::Document.new({
-      :documentBase64 => Base64.encode64(File.binread(file_path.to_s)),
-      :name => 'Test', :fileExtension => file_extension, :documentId => '1'
+      :documentBase64 => Base64.encode64(File.binread(file_path)),
+      :name => file_name, :fileExtension => file_extension, :documentId => '1'
     })
     envelope_definition.documents = [doc] #can include multiple documents
 
@@ -49,7 +46,7 @@ class AgreementsController < ApplicationController
     signer = DocuSign_eSign::Signer.new({
       :email => signer_email,
       :name => signer_name,
-      :recipientId => "1"
+      :recipientId => "1" #should be scrambled
     })
 
     #Create sign here tab
@@ -82,9 +79,9 @@ class AgreementsController < ApplicationController
     puts 'RESULTS'
     puts results
 
-    params[:envelope_id] = results.envelope_id
-    puts params
     #save new agreement
+    params[:envelope_id] = results.envelope_id
+
     @agreement = Agreement.new(params)
 
     if @agreement.save
