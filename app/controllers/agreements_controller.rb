@@ -5,7 +5,6 @@ class AgreementsController < ApplicationController
 
   def new
     @agreement = Agreement.new
-    @choices = ['pdf_form', 'upload', 'template']
   end
 
   def create
@@ -13,7 +12,6 @@ class AgreementsController < ApplicationController
     #https://github.com/docusign/eg-03-ruby-auth-code-grant/blob/master/app/controllers/eg007_envelope_get_doc_controller.rb
     params = agreement_params
     params[:status] = "pending"
-    puts params
 
     #Set up email sending
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
@@ -73,8 +71,7 @@ class AgreementsController < ApplicationController
     api_client.default_headers["Authorization"] = "Bearer " + access_token
     envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
 
-    puts envelope_definition
-    #Send Request to Docusign
+    #Send Request to DocuSign
     results = envelopes_api.create_envelope(account_id, envelope_definition)
 
     #save new agreement

@@ -1,0 +1,2 @@
+module PdfAgreementsHelper
+end

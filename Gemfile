@@ -61,3 +61,12 @@ gem 'crack'
 
 #docusign gem ruby client
 gem 'docusign_esign'
+
+#WickedPDF
+gem 'wicked_pdf'
+
+#Wkhtmltopdf binary
+gem 'wkhtmltopdf-binary'
+
+#http client
+gem 'httpclient'
