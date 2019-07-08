@@ -63,41 +63,45 @@ class PdfAgreementsController < ApplicationController
       signer1 = DocuSign_eSign::Signer.new({
           email: signer1_email, name: signer1_name,
           roleName: "signer", recipientId: "1",
-          routingOrder: '1' #define order
+          routingOrder: '1', #define order
+          defaultRecipient: "true"
            #Adding clientUserId transforms the template recipient into an embedded recipient, not done now because we are email-sending
        })
 
       #Define Signer Tabs & Assign Signing Order
-      signer1_tab = DocuSign_eSign::SignHere.new(
-          tabLabel: "SignHere" #must match pdf form field name!! important
-       )
-      signer1_tabs = DocuSign_eSign::Tabs.new(
-          :signHereTabs => signer1_tab
-      )
-      signer1.tabs = signer1_tabs
+      # signer1_tab = DocuSign_eSign::SignHere.new(
+      #     tabLabel: "DocuSignSignHere", #must match pdf form field name!! important
+      #     documentId: "1",
+      # )
+      #
+      # signer1_tabs = DocuSign_eSign::Tabs.new(
+      #     :signHereTabs => [signer1_tab]
+      # )
+      # signer1.tabs = signer1_tabs
+
       recipients_server_template = DocuSign_eSign::Recipients.new(
-        "signer" => [signer1]
+        :signers => [signer1]
       )
 
       #Create new Doc
       doc1 = DocuSign_eSign::Document.new(
-          'documentBase64': Base64.encode64(File.binread(save_path)),
-          'documentId': '1',
-          'fileExtension': 'pdf',
-          'name': 'wework_agreement_dummy.pdf',
-          'transformPdfFields': true #important! Toggle to transform PDF Fields
+          documentBase64: Base64.encode64(File.binread(save_path)),
+          documentId: '1',
+          fileExtension: 'pdf',
+          name: 'wework_agreement_dummy.pdf',
+          transformPdfFields: "true" #important! Toggle to transform PDF Fields
       )
 
       # Putting it all together: Create new Composite Template (necessary for transforming PDF Fields)
       comp_template = DocuSign_eSign::CompositeTemplate.new(
           compositeTemplateId: "1",
+          document: doc1,
           inlineTemplates: [
               DocuSign_eSign::InlineTemplate.new(
                 sequence: '1',
                 recipients: recipients_server_template
               )
-          ],
-          document: doc1
+          ]
       )
 
       #Create Envelope Definition
@@ -121,6 +125,7 @@ class PdfAgreementsController < ApplicationController
 
       #Send Document
       begin
+        puts envelope_definition
         results = envelopes_api.create_envelope(account_id, envelope_definition)
       rescue DocuSign_eSign::ApiError => e
         error = JSON.parse e.response_body
