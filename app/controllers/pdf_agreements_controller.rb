@@ -33,8 +33,21 @@ class PdfAgreementsController < ApplicationController
     #Save Agreement to generate Agreement ID
     if @agreement.save
       #Make get request to generated PDF
-      client = HTTPClient.new
-      pdf = client.get_content("#{request.base_url}/pdf_agreements/#{@agreement.id}.pdf")
+      # OLD GET REQUEAT
+      # client = HTTPClient.new
+      # pdf = client.get_content("#{request.base_url}/pdf_agreements/#{@agreement.id}.pdf")
+
+      pdf_string = render_to_string(:show, :locals => { :@agreement => @agreement }, layout: 'pdf')
+      pdf = WickedPdf.new.pdf_from_string(
+          pdf_string,
+          page_size: 'A4',
+          orientation: "Landscape",
+          lowquality: true,
+          zoom: 1,
+          dpi: 75,
+          :extra => '--enable-forms'
+      )
+
       #Write PDF into temporary file on disk
       save_path = "#{::Rails.root}/public/uploads/agreement/attachment/#{@agreement.id}_tmp.pdf"
       File.open(save_path, "w:ASCII-8BIT") do
