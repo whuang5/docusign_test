@@ -49,11 +49,15 @@ class WebhookController < ApplicationController
 
     puts "RECIPIENT STATUS"
     puts recipient_status
+    puts recipient_status.is_a?(Array)
     puts "ENVELOPE_STATUS"
     puts envelope_status
+    puts envelope_status.is_a?(Array)
     
-    email = recipient_status["Email"].downcase
-    status = recipient_status["Status"].downcase
+    email = recipient_status["Email"]
+    puts "EMAIL: " + email
+    puts email.is_a?(Array)
+    status = recipient_status["Status"]
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']["ID"]
     envelope_id = envelope_status['EnvelopeID']
 
