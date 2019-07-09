@@ -54,7 +54,7 @@ class WebhookController < ApplicationController
     puts envelope_status
     puts envelope_status.is_a?(Array)
     
-    email = recipient_status["Email"]
+    email = recipient_status[0]["Email"]
     puts "EMAIL: " + email
     puts email.is_a?(Array)
     status = recipient_status["Status"]
