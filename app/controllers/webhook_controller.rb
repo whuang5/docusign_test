@@ -110,7 +110,7 @@ class WebhookController < ApplicationController
 
     # Save Agreement & Update agreement View
     if @agreement.save
-      redirect_to agreements_path, notice: "The agreement #{@agreement.name} has been updated"
+      redirect_to agreements_path, notice: "The agreement #{@agreement.name} has been updated", turbolinks: false
     end
   end
 end

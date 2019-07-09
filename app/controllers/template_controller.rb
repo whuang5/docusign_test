@@ -9,7 +9,7 @@ class TemplateController < ApplicationController
 
     #Config Variables
     email = params[:emails]
-    name = params[:name]
+    name = params[:names]
     account_id = ENV['DOCUSIGN_ACCOUNT_ID']
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
 
@@ -70,6 +70,6 @@ class TemplateController < ApplicationController
 
   private
     def agreement_params
-      params.require(:agreement).permit(:name, :attachment, :emails, :status, :envelope_id)
+      params.require(:agreement).permit(:names, :attachment, :emails, :status, :envelope_id)
     end
 end

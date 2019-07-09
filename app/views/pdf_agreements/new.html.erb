@@ -11,8 +11,8 @@
 <div class = "well">
   <h3>Upload via PDF Form Fields</h3>
   <%= form_for @agreement, url: '/pdf_agreements', html: { multipart: true } do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :names %>
+    <%= f.text_field :names %>
     <br />
 
     <%= f.label :emails %>

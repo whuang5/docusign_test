@@ -28,7 +28,7 @@ class PdfAgreementsController < ApplicationController
     @agreement = Agreement.new(params)
 
     signer1_email = @agreement.emails
-    signer1_name = @agreement.name
+    signer1_name = @agreement.names
 
     #Save Agreement to generate Agreement ID
     if @agreement.save
@@ -60,14 +60,8 @@ class PdfAgreementsController < ApplicationController
       signer1 = DocuSign_eSign::Signer.new({
           email: signer1_email, name: signer1_name,
           roleName: "signer", recipientId: "1",
-          routingOrder: '1' #define order
-           #Adding clientUserId transforms the template recipient into an embedded recipient, not done now because we are email-sending
-       })
-
-      signer2 = DocuSign_eSign::Signer.new({
-           email: 'william.huang5@wework.com', name: 'WeWork Billy',
-           roleName: "signer", recipientId: "2",
-           routingOrder: '2' #define order
+          routingOrder: '1', #define order
+          "defaultRecipient": "true"
            #Adding clientUserId transforms the template recipient into an embedded recipient, not done now because we are email-sending
        })
 
@@ -76,23 +70,14 @@ class PdfAgreementsController < ApplicationController
           tabLabel: "DocuSignSignHere", #must match pdf form field name!! important
           documentId: "1",
       )
-      signer2_tab = DocuSign_eSign::SignHere.new(
-          tabLabel: "eSignSignHere",
-          documentId: "1"
-      )
       #ASSIGN Tab signing order for each recipient
       signer1_tabs = DocuSign_eSign::Tabs.new(
           :signHereTabs => [signer1_tab]
       )
       signer1.tabs = signer1_tabs
 
-      signer2_tabs = DocuSign_eSign::Tabs.new(
-          :signHereTabs => [signer2_tab]
-      )
-      signer2.tabs = signer2_tabs
-
       recipients_server_template = DocuSign_eSign::Recipients.new(
-        :signers => [signer1, signer2]
+        :signers => [signer1]
       )
 
       #Create new Doc
@@ -160,6 +145,6 @@ class PdfAgreementsController < ApplicationController
 
   private
   def agreement_params
-    params.require(:agreement).permit(:name, :attachment, :emails, :status, :envelope_id)
+    params.require(:agreement).permit(:names, :attachment, :emails, :status, :envelope_id)
   end
 end

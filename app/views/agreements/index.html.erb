@@ -11,7 +11,7 @@
 <table class = "table table-bordered table-striped">
    <thead>.
       <tr>
-         <th>Name</th>
+         <th>Names</th>
          <th>Download Link</th>
          <th>Status </th>
          <th> </th>
@@ -21,10 +21,10 @@
    <tbody>
       <% @agreements.each do |a| %>
          <tr>
-            <td><%= a.name %></td>
+            <td><%= a.names %></td>
             <td><%= link_to "Download Agreement", a.attachment_url %></td>
             <td><%= a.status %></td>
-            <td><%= button_to "Delete",  a, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{a.name}?" %></td>
+            <td><%= button_to "Delete",  a, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{a.names}?" %></td>
          </tr>
       <% end %>
    </tbody>

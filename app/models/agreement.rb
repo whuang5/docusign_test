@@ -1,7 +1,7 @@
 class Agreement < ActiveRecord::Base
   mount_uploader :attachment, AttachmentUploader
   before_save :update_attachment_attributes
-  validates :name, presence: true
+  validates :names, presence: true
 
   private
     def update_attachment_attributes

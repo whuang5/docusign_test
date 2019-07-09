@@ -16,7 +16,7 @@ class AgreementsController < ApplicationController
     #Set up email sending
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
     account_id = ENV['DOCUSIGN_ACCOUNT_ID']
-    signer_name = params[:name]
+    signer_name = params[:names]
     signer_email = params[:emails].downcase #Need to remember to split into multiple emails
 
     #Create and Save new agreement in DB
@@ -94,6 +94,6 @@ class AgreementsController < ApplicationController
 
   private
     def agreement_params
-      params.require(:agreement).permit(:name, :attachment, :emails, :status, :envelope_id)
+      params.require(:agreement).permit(:names, :attachment, :emails, :status, :envelope_id)
     end
 end
