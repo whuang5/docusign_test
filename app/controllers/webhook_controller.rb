@@ -52,8 +52,8 @@ class WebhookController < ApplicationController
     puts "ENVELOPE_STATUS"
     puts envelope_status
     
-    email = recipient_status['Email'][0].downcase
-    status = recipient_status['Status'][0].downcase
+    email = recipient_status["Email"].downcase
+    status = recipient_status["Status"].downcase
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']["ID"]
     envelope_id = envelope_status['EnvelopeID']
 
