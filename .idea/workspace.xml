@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c05b53c6-a0f2-4270-8842-7cfc36a46486" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/agreements_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/template_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/template_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/webhook_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/webhook_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/agreement.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/agreement.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/agreements/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/agreements/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/agreements/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/agreements/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/template/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/template/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-    </list>
+    <list default="true" id="c05b53c6-a0f2-4270-8842-7cfc36a46486" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -32,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="124">
@@ -59,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state relative-caret-position="273">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -163,7 +149,6 @@
         <option value="$PROJECT_DIR$/config/local_env.yml" />
         <option value="$PROJECT_DIR$/app/controllers/webhook_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/agreements_controller.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" />
         <option value="$PROJECT_DIR$/app/controllers/template_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/agreements/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/agreements/index.html.erb" />
@@ -172,6 +157,7 @@
         <option value="$PROJECT_DIR$/app/models/agreement.rb" />
         <option value="$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" />
       </list>
     </option>
   </component>
@@ -384,16 +370,15 @@
       <workItem from="1562164603968" duration="2832000" />
       <workItem from="1562171955824" duration="738000" />
       <workItem from="1562183246423" duration="13648000" />
-      <workItem from="1562597333597" duration="22590000" />
+      <workItem from="1562597333597" duration="23068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39808000" />
+    <option name="totallyTimeSpent" value="40286000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15164521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -550,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -582,6 +560,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
         </state>
       </provider>
     </entry>
