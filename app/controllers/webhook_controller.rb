@@ -53,12 +53,23 @@ class WebhookController < ApplicationController
     puts "ENVELOPE_STATUS"
     puts envelope_status
     puts envelope_status.is_a?(Array)
-    
-    email = recipient_status[0]["Email"]
+
+    email = ""
+    status = ""
+    if recipient_status.is_a?(Array)
+      email = recipient_status[0]["Email"]
+      status = recipient_status[0]["Status"]
+    else
+      email = recipient_status["Email"]
+      status = recipient_status["Status"]
+    end
+    email = email.downcase
+    status = status.downcase
+
     puts "EMAIL: " + email
-    puts email.is_a?(Array)
-    status = recipient_status["Status"]
-    document_id = envelope_status['DocumentStatuses']['DocumentStatus']["ID"]
+    puts "STATUS: " + status
+
+    document_id = envelope_status['DocumentStatuses']['DocumentStatus']['ID']
     envelope_id = envelope_status['EnvelopeID']
 
     puts "DOCUMENT ID: " + document_id
@@ -80,11 +91,9 @@ class WebhookController < ApplicationController
     @agreement = Agreement.find_by(:envelope_id => envelope_id)
     @agreement.status = status #change status to new status
     original_name = @agreement.original_name
-    file_type = @agreement.content_type
 
     if status == 'completed'
       temp_file = envelope_api.get_document(account_id, document_id, envelope_id)
-      old_agreement = @agreement.attachment
       id = @agreement.id
 
       #Move template to existing disk location
@@ -93,7 +102,7 @@ class WebhookController < ApplicationController
       new_file = File.new(new_file_path)
 
       #save new file
-      @agreement.attachment = new_file #save path in database (go retrieve path)
+      @agreement.attachment = new_file #save path in database
 
       #delete stored temp_file
       temp_file.delete
