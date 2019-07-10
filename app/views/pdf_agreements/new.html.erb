@@ -13,12 +13,17 @@
   <%= form_for @agreement, url: '/pdf_agreements', html: { multipart: true } do |f| %>
     <%= f.label :names %>
     <%= f.text_field :names %>
+    <span>Please separate names by commas :)</span>
     <br />
 
     <%= f.label :emails %>
     <%= f.text_field :emails %>
-    <span>Please seperate emails by commas :)</span>
+    <span>Please separate emails by commas :)</span>
     <br />
+
+    <%= f.label :orders, "Routing Order: "%>
+    <%= f.text_field :orders %>
+    <span>Please separate order by commas :)</span>
 
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>

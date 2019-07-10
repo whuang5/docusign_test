@@ -27,8 +27,9 @@ class PdfAgreementsController < ApplicationController
     params = agreement_params
     @agreement = Agreement.new(params)
 
-    signer1_email = @agreement.emails
-    signer1_name = @agreement.names
+    emails = @agreement.emails
+    names = @agreement.names
+    orders = @agreement.orders
 
     #Save Agreement to generate Agreement ID
     if @agreement.save
@@ -56,28 +57,10 @@ class PdfAgreementsController < ApplicationController
       new_file = File.new(save_path)
       @agreement.attachment = new_file
 
-      #Define Signers, High Level
-      signer1 = DocuSign_eSign::Signer.new({
-          email: signer1_email, name: signer1_name,
-          roleName: "signer", recipientId: "1",
-          routingOrder: '1', #define order
-          "defaultRecipient": "true"
-           #Adding clientUserId transforms the template recipient into an embedded recipient, not done now because we are email-sending
-       })
-
-      #Create Signer Tabs & Assign Signing Order
-      signer1_tab = DocuSign_eSign::SignHere.new(
-          tabLabel: "DocuSignSignHere", #must match pdf form field name!! important
-          documentId: "1",
-      )
-      #ASSIGN Tab signing order for each recipient
-      signer1_tabs = DocuSign_eSign::Tabs.new(
-          :signHereTabs => [signer1_tab]
-      )
-      signer1.tabs = signer1_tabs
-
+      #Create Signers
+      signers = create_signers(emails, names, orders)
       recipients_server_template = DocuSign_eSign::Recipients.new(
-        :signers => [signer1]
+        :signers => signers
       )
 
       #Create new Doc
@@ -122,7 +105,6 @@ class PdfAgreementsController < ApplicationController
 
       #Send Document
       begin
-        puts envelope_definition
         results = envelopes_api.create_envelope(account_id, envelope_definition)
 
         @agreement.status = "pending"
@@ -145,6 +127,43 @@ class PdfAgreementsController < ApplicationController
 
   private
   def agreement_params
-    params.require(:agreement).permit(:names, :attachment, :emails, :status, :envelope_id)
+    params.require(:agreement).permit(:names, :orders, :attachment, :emails, :status, :envelope_id)
+  end
+
+  def create_signers(emails, names, orders)
+    e_array = emails.to_s.gsub(/\s+/, "").split(',')
+    o_array = orders.to_s.gsub(/\s+/, "").split(',')
+    n_array = names.to_s.split(",")
+    signers = []
+
+    if e_array.length == n_array.length
+      e_array.zip(n_array, o_array).each_with_index do |val, index|
+        email = val[0]
+        name = val[1].strip
+        order = val[2]
+        new_index = index + 1
+
+        signer = DocuSign_eSign::Signer.new({
+            email: "#{email}", name: "#{name}",
+            roleName: "signer", recipientId: "#{new_index}",
+            routingOrder: "#{order}", #define order
+            defaultRecipient: "false" #Add clientID here makes envelope embeddable
+        })
+        signer_tab = DocuSign_eSign::SignHere.new(
+            tabLabel: "DocuSignSignHere Signer#{new_index}", #must match pdf form field name!! important
+         )
+        #ASSIGN Tab signing order for each recipient
+        signer_tabs = DocuSign_eSign::Tabs.new(
+            :signHereTabs => [signer_tab]
+        )
+        signer.tabs = signer_tabs
+        signers.push(signer)
+      end
+    else
+      return "error"
+    end
+
+    #return array of signers
+    signers
   end
 end

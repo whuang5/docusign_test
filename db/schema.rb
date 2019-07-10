@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_180146) do
 
   create_table "agreements", force: :cascade do |t|
     t.string "names"
+    t.string "orders"
     t.string "status"
     t.string "emails"
     t.string "attachment"
