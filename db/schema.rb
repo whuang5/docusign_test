@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_180146) do
   enable_extension "plpgsql"
 
   create_table "agreements", force: :cascade do |t|
+    t.string "preview_url"
     t.string "names"
     t.string "orders"
     t.string "status"

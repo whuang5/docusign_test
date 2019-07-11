@@ -86,7 +86,7 @@ class PdfAgreementsController < ApplicationController
 
       #Create Envelope Definition
       envelope_definition = DocuSign_eSign::EnvelopeDefinition.new(
-        status: "sent",
+        status: "created",
         emailSubject: "WeWork Document: Please Sign This Document",
         compositeTemplates: [comp_template]
       )
@@ -105,12 +105,23 @@ class PdfAgreementsController < ApplicationController
 
       #Send Document
       begin
-        results = envelopes_api.create_envelope(account_id, envelope_definition)
+        puts "Envelope definition params:: #{envelope_definition}"
+        results = envelopes_api.create_envelope(account_id, envelope_definition )
 
         @agreement.status = "pending"
         @agreement.envelope_id = results.envelope_id
 
-        puts results
+        puts "Envelope Results: #{results}"
+        #Create redirect URL
+
+        return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
+           returnUrl: "http://localhost:3000/agreements"
+        )
+
+        sender_view_results = envelopes_api.create_sender_view(account_id, results.envelope_id, return_url_request)
+        puts sender_view_results.url
+        @agreement.preview_url = sender_view_results.url
+
         if @agreement.save
           redirect_to agreements_path, notice: "The PDF Uploaded Agreement has been saved."
         else
@@ -127,9 +138,10 @@ class PdfAgreementsController < ApplicationController
 
   private
   def agreement_params
-    params.require(:agreement).permit(:names, :orders, :attachment, :emails, :status, :envelope_id)
+    params.require(:agreement).permit(:names, :orders, :attachment, :emails, :status, :envelope_id, :preview_url)
   end
 
+  #Create array of signers for template usage
   def create_signers(emails, names, orders)
     e_array = emails.to_s.gsub(/\s+/, "").split(',')
     o_array = orders.to_s.gsub(/\s+/, "").split(',')
@@ -163,7 +175,6 @@ class PdfAgreementsController < ApplicationController
       return "error"
     end
 
-    #return array of signers
     signers
   end
 end

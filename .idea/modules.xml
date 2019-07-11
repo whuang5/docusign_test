@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/docusign_test.iml" filepath="$PROJECT_DIR$/.idea/docusign_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/.idea/eg-01-ruby-jwt.iml" filepath="$PROJECT_DIR$/../../eg-01-ruby-jwt/.idea/eg-01-ruby-jwt.iml" />
     </modules>
   </component>
 </project>

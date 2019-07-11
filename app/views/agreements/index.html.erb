@@ -13,6 +13,7 @@
       <tr>
          <th>Names</th>
          <th>Download Link</th>
+         <th>Preview Link</th>
          <th>Status </th>
          <th> </th>
       </tr>
@@ -23,6 +24,7 @@
          <tr>
             <td><%= a.names %></td>
             <td><%= link_to "Download Agreement", a.attachment_url %></td>
+            <td><%= link_to "Preview URL", a.preview_url %></td>
             <td><%= a.status %></td>
             <td><%= button_to "Delete",  a, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{a.names}?" %></td>
          </tr>
