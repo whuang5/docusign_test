@@ -61,7 +61,7 @@ class AgreementsController < ApplicationController
     recipients = DocuSign_eSign::Recipients.new({:signers => [signer]})
 
     envelope_definition.recipients = recipients
-    envelope_definition.status = 'sent' #this means send immediately
+    envelope_definition.status = 'create' #this means send immediately
 
     #Send Envelope!
     base_path = 'http://demo.docusign.net/restapi'
