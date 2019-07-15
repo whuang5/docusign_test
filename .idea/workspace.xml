@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/agreements_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/template_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/template_controller.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+            <state relative-caret-position="175">
+              <caret line="132" column="88" selection-start-line="132" selection-start-column="88" selection-end-line="132" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -37,7 +38,16 @@
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/local_env.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -45,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/template_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="-35">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -54,17 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/agreements_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/agreements/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+            <state relative-caret-position="1806">
+              <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -73,13 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabs.new</find>
-      <find>k15281528@gmail.com</find>
-      <find>docusign</find>
-      <find>recipient_status</find>
-      <find>old_agree</find>
-      <find>@agreement.save</find>
-      <find>agreement</find>
       <find>:name</find>
       <find>transform</find>
       <find>docusignsign</find>
@@ -101,8 +95,15 @@
       <find>create_sen</find>
       <find>sent</find>
       <find>status</find>
+      <find>create</find>
       <find>create&quot;</find>
       <find>find</find>
+      <find>return</find>
+      <find>http://localhost:3000/agreements</find>
+      <find>notice</find>
+      <find>has bee</find>
+      <find>has been</find>
+      <find>cc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,8 +126,8 @@
         <option value="$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/config/local_env.yml" />
         <option value="$PROJECT_DIR$/app/views/agreements/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/local_env.yml" />
         <option value="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/template_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/agreements_controller.rb" />
@@ -156,6 +157,12 @@
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
@@ -323,18 +330,18 @@
       <workItem from="1562597333597" duration="28319000" />
       <workItem from="1562774788814" duration="12769000" />
       <workItem from="1562872618935" duration="574000" />
-      <workItem from="1562964482192" duration="2931000" />
+      <workItem from="1562964482192" duration="3800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61811000" />
+    <option name="totallyTimeSpent" value="62680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15808298" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15808298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -347,7 +354,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" visible="true" weight="0.24447174" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" visible="true" weight="0.24447174" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.4127764" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -541,45 +548,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/agreements/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/local_env.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="717" selection-start-column="717" selection-end-column="717" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/template_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+        <state relative-caret-position="175">
+          <caret line="132" column="88" selection-start-line="132" selection-start-column="88" selection-end-line="132" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/template_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/agreements/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/agreements_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        <state relative-caret-position="1806">
+          <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
         </state>
       </provider>
     </entry>

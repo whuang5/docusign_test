@@ -64,7 +64,7 @@ class TemplateController < ApplicationController
     end
 
     if @agreement.save
-      redirect_to agreements_path, notice: 'The Template Agreement has been sent'
+      redirect_to agreements_path, notice: 'The Template Agreement has been created.'
     end
   end
 

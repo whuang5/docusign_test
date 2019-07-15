@@ -80,7 +80,7 @@ class AgreementsController < ApplicationController
     @agreement = Agreement.new(params)
 
     if @agreement.save
-      redirect_to agreements_path, notice: "The Uploaded Agreement has been uploaded."
+      redirect_to agreements_path, notice: "The Uploaded Agreement has been created."
     else
       render 'new'
     end

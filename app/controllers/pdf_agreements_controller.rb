@@ -126,11 +126,11 @@ class PdfAgreementsController < ApplicationController
     account_id = ENV['DOCUSIGN_ACCOUNT_ID']
     @agreement = Agreement.find(params[:id])
     return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
-        returnUrl: "http://localhost:3000/agreements"
+        returnUrl: ENV['DOCUSIGN_RETURN_URL']
     )
     envelopes_api = configure_envelopes_api
     sender_view_url = get_sender_view_url(envelopes_api, account_id, @agreement.envelope_id, return_url_request)
-    redirect_to sender_view_url
+    redirect_to sender_view_url, notice: "The Agreement has been sent to the recipient!"
   end
 
   private
