@@ -93,15 +93,10 @@ class PdfAgreementsController < ApplicationController
 
       #Prepare to send new file through DocuSign
       # ENV Variables
-      access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
       account_id = ENV['DOCUSIGN_ACCOUNT_ID']
-      #Client API Config
-      base_path = 'http://demo.docusign.net/restapi'
-      configuration = DocuSign_eSign::Configuration.new
-      configuration.host = base_path
-      api_client = DocuSign_eSign::ApiClient.new(configuration)
-      api_client.default_headers["Authorization"] = "Bearer " + access_token
-      envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+
+      #Configure Envelopes APi
+      envelopes_api = configure_envelopes_api
 
       #Send Document
       begin
@@ -112,15 +107,6 @@ class PdfAgreementsController < ApplicationController
         @agreement.envelope_id = results.envelope_id
 
         puts "Envelope Results: #{results}"
-        #Create redirect URL
-
-        return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
-           returnUrl: "http://localhost:3000/agreements"
-        )
-
-        sender_view_results = envelopes_api.create_sender_view(account_id, results.envelope_id, return_url_request)
-        puts sender_view_results.url
-        @agreement.preview_url = sender_view_results.url
 
         if @agreement.save
           redirect_to agreements_path, notice: "The PDF Uploaded Agreement has been saved."
@@ -133,10 +119,32 @@ class PdfAgreementsController < ApplicationController
         puts error
       end
     end
+  end
 
+  def generate_signer_view
+    #Create redirect URL
+    account_id = ENV['DOCUSIGN_ACCOUNT_ID']
+    @agreement = Agreement.find(params[:id])
+    return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
+        returnUrl: "http://localhost:3000/agreements"
+    )
+    envelopes_api = configure_envelopes_api
+    sender_view_url = get_sender_view_url(envelopes_api, account_id, @agreement.envelope_id, return_url_request)
+    redirect_to sender_view_url
   end
 
   private
+  def configure_envelopes_api
+    access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
+    #Client API Config
+    base_path = 'http://demo.docusign.net/restapi'
+    configuration = DocuSign_eSign::Configuration.new
+    configuration.host = base_path
+    api_client = DocuSign_eSign::ApiClient.new(configuration)
+    api_client.default_headers["Authorization"] = "Bearer " + access_token
+    envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
+  end
+
   def agreement_params
     params.require(:agreement).permit(:names, :orders, :attachment, :emails, :status, :envelope_id, :preview_url)
   end
@@ -176,5 +184,10 @@ class PdfAgreementsController < ApplicationController
     end
 
     signers
+  end
+
+  def get_sender_view_url(envelopes_api, account_id, envelope_id, return_url_request)
+    sender_view_results = envelopes_api.create_sender_view(account_id, envelope_id, return_url_request)
+    sender_view_results.url
   end
 end
