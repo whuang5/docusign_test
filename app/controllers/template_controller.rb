@@ -16,7 +16,7 @@ class TemplateController < ApplicationController
     #Create Envelope with template Id
     template_id = '2d8b18cc-ef28-4058-a4e3-5fc11c6bf96e'
     envelope_definition = DocuSign_eSign::EnvelopeDefinition.new({
-      :status => 'create', :templateId => template_id
+      :status => 'created', :templateId => template_id
     })
 
     #Set Tabs Manually with Absolute Positioning
