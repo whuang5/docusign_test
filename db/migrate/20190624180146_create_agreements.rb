@@ -2,6 +2,7 @@ class CreateAgreements < ActiveRecord::Migration[6.0]
   def change
     create_table :agreements do |t|
       t.string :preview_url
+      t.string :number_of_docs
       t.string :names
       t.string :orders
       t.string :status
@@ -16,3 +17,5 @@ class CreateAgreements < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+#20190624180146

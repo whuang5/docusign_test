@@ -55,7 +55,7 @@ class TemplateController < ApplicationController
 
       params[:attachment] = new_file
       params[:envelope_id] = envelope_id
-      params[:status] = 'pending'
+      params[:status] = 'created'
       @agreement = Agreement.new(params)
 
     rescue DocuSign_eSign::ApiError => e

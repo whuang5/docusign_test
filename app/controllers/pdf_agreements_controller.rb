@@ -1,6 +1,7 @@
 class PdfAgreementsController < ApplicationController
   def new
     @agreement = Agreement.new
+    @number_of_documents = [1,2,3]
   end
 
   def show
@@ -84,8 +85,16 @@ class PdfAgreementsController < ApplicationController
           ]
       )
 
+      notifications = DocuSign_eSign::Notification.new(
+         expirations: {
+             expireAfter: "120",
+             expireEnabled: "true",
+             expireWarn: "1"
+         }
+      )
       #Create Envelope Definition
       envelope_definition = DocuSign_eSign::EnvelopeDefinition.new(
+        notification: notifications,
         status: "created",
         emailSubject: "WeWork Document: Please Sign This Document",
         compositeTemplates: [comp_template]
@@ -101,10 +110,19 @@ class PdfAgreementsController < ApplicationController
       #Send Document
       begin
         puts "Envelope definition params:: #{envelope_definition}"
-        results = envelopes_api.create_envelope(account_id, envelope_definition )
+        results = envelopes_api.create_envelope(account_id, envelope_definition)
 
-        @agreement.status = "pending"
+        #Save Edit View
+        return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
+            returnUrl: ENV['DOCUSIGN_RETURN_URL']
+        )
+
+        preview_url = get_edit_view_url(envelopes_api, account_id, results.envelope_id, return_url_request)
+        puts "Pre-generated URL: " + preview_url
+
+        @agreement.status = "created"
         @agreement.envelope_id = results.envelope_id
+        @agreement.preview_url = preview_url
 
         puts "Envelope Results: #{results}"
 
@@ -121,19 +139,60 @@ class PdfAgreementsController < ApplicationController
     end
   end
 
-  def generate_signer_view
+  def generate_edit_view
     #Create redirect URL
     account_id = ENV['DOCUSIGN_ACCOUNT_ID']
     @agreement = Agreement.find(params[:id])
     return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
         returnUrl: ENV['DOCUSIGN_RETURN_URL']
     )
+    #Configure Envelopes API
     envelopes_api = configure_envelopes_api
+
+    #Get Edit View URL & Redirect
+    edit_view_url = get_edit_view_url(envelopes_api, account_id, @agreement.envelope_id, return_url_request)
+    puts "On-demand URL: #{edit_view_url}"
+    redirect_to edit_view_url, notice: "The Agreement has been sent to the recipient!"
+  end
+
+  def generate_sender_view
+    #Create redirect URL
+    account_id = ENV['DOCUSIGN_ACCOUNT_ID']
+    @agreement = Agreement.find(params[:id])
+    return_url_request = DocuSign_eSign::ReturnUrlRequest.new(
+        returnUrl: ENV['DOCUSIGN_RETURN_URL']
+    )
+    #Configure Envelopes API
+    envelopes_api = configure_envelopes_api
+
+    #Get Edit View URL & Redirect
     sender_view_url = get_sender_view_url(envelopes_api, account_id, @agreement.envelope_id, return_url_request)
+    puts "On-demand URL: #{sender_view_url}"
     redirect_to sender_view_url, notice: "The Agreement has been sent to the recipient!"
   end
 
+  def redirect_preview_url
+    @agreement = Agreement.find(params[:id])
+    preview_url = @agreement.preview_url
+    envelope_id = @agreement.envelope_id
+
+    #env variables
+    access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
+    account_id = ENV['DOCUSIGN_ACCOUNT_ID']
+
+    #Add access token to header
+    response.headers["Authorization"] = "Bearer " + access_token
+
+    #Create Random API Call
+    envelopes_api = configure_envelopes_api
+    results = envelopes_api.list_documents(account_id, envelope_id)
+    puts results
+
+    redirect_to preview_url
+  end
+
   private
+  #Return Configured EnvelopesAPI client
   def configure_envelopes_api
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']
     #Client API Config
@@ -145,11 +204,12 @@ class PdfAgreementsController < ApplicationController
     envelopes_api = DocuSign_eSign::EnvelopesApi.new(api_client)
   end
 
+  #Check Required Params
   def agreement_params
-    params.require(:agreement).permit(:names, :orders, :attachment, :emails, :status, :envelope_id, :preview_url)
+    params.require(:agreement).permit(:names, :orders, :attachment, :emails, :status, :envelope_id, :number_of_docs)
   end
 
-  #Create array of signers for template usage
+  #Create & Return array of signers for template usage
   def create_signers(emails, names, orders)
     e_array = emails.to_s.gsub(/\s+/, "").split(',')
     o_array = orders.to_s.gsub(/\s+/, "").split(',')
@@ -186,6 +246,13 @@ class PdfAgreementsController < ApplicationController
     signers
   end
 
+  #Get edit View URL
+  def get_edit_view_url(envelopes_api, account_id, envelope_id, return_url_request)
+    edit_view_results = envelopes_api.create_edit_view(account_id, envelope_id, return_url_request)
+    edit_view_results.url
+  end
+
+  #Get sender View URL
   def get_sender_view_url(envelopes_api, account_id, envelope_id, return_url_request)
     sender_view_results = envelopes_api.create_sender_view(account_id, envelope_id, return_url_request)
     sender_view_results.url

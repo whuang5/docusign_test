@@ -11,7 +11,7 @@ class AgreementsController < ApplicationController
     #make status pending for uploaded file
     #https://github.com/docusign/eg-03-ruby-auth-code-grant/blob/master/app/controllers/eg007_envelope_get_doc_controller.rb
     params = agreement_params
-    params[:status] = "pending"
+    params[:status] = "created"
 
     #Set up email sending
     access_token = ENV['DOCUSIGN_ACCESS_TOKEN_TEMP']

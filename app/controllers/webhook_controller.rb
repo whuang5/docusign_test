@@ -66,14 +66,8 @@ class WebhookController < ApplicationController
     email = email.downcase
     status = status.downcase
 
-    puts "EMAIL: " + email
-    puts "STATUS: " + status
-
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']['ID']
     envelope_id = envelope_status['EnvelopeID']
-
-    puts "DOCUMENT ID: " + document_id
-    puts "ENVELOPE ID: " + envelope_id
 
     #Check if webhook response is 'completed', then get PDF based on Envelope ID
     #Docusign Configuration

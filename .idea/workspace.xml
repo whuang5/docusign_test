@@ -5,9 +5,18 @@
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/docusign_private_key.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/docusign_private_key.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/agreements_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/template_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/template_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/webhook_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/webhook_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/agreements/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/agreements/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/agreements/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/agreements/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -23,13 +32,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="docusign_test" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="132" column="88" selection-start-line="132" selection-start-column="88" selection-end-line="132" selection-end-column="88" />
+            <state relative-caret-position="366">
+              <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -37,35 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/local_env.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/template_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/agreements_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1806">
-              <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+            <state relative-caret-position="21">
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -74,36 +59,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>:name</find>
-      <find>transform</find>
-      <find>docusignsign</find>
-      <find>signer2</find>
-      <find>signer1</find>
-      <find>name</find>
-      <find>Signer1\\*</find>
-      <find>puts</find>
-      <find>names</find>
-      <find>envelope_d</find>
-      <find>signers</find>
-      <find>Arrr</find>
-      <find>orders</find>
-      <find>api_client</find>
-      <find>:status</find>
-      <find>base_uri</find>
-      <find>base_path</find>
       <find>create_send</find>
       <find>create_sen</find>
       <find>sent</find>
       <find>status</find>
-      <find>create</find>
       <find>create&quot;</find>
       <find>find</find>
       <find>return</find>
       <find>http://localhost:3000/agreements</find>
       <find>notice</find>
       <find>has bee</find>
-      <find>has been</find>
       <find>cc</find>
+      <find>has been</find>
+      <find>created</find>
+      <find>pending</find>
+      <find>num</find>
+      <find>composi</find>
+      <find>create_edit</find>
+      <find>sender</find>
+      <find>create</find>
+      <find>generate_</find>
+      <find>account_</find>
+      <find>preview_url</find>
+      <find>start_with?</find>
+      <find>base_path</find>
+      <find>example_base</find>
+      <find>sending</find>
+      <find>examp</find>
+      <find>configure_</find>
+      <find>configure</find>
+      <find>oauth</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,22 +100,24 @@
         <option value="$PROJECT_DIR$/app/views/layouts/pdf.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/webhook_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/template/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/agreement.rb" />
-        <option value="$PROJECT_DIR$/app/views/agreements/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" />
         <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/docusign_private_key.txt" />
-        <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" />
-        <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" />
         <option value="$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb" />
-        <option value="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/agreements/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/local_env.yml" />
-        <option value="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/template_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/agreements_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" />
+        <option value="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/webhook_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/agreements/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/agreements/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/local_env.yml" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb" />
+        <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_helper.rb" />
+        <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" />
+        <option value="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" />
       </list>
     </option>
   </component>
@@ -146,6 +133,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,38 +156,16 @@
             <path>
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="agreements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="migrate" type="462c0819:PsiDirectoryNode" />
+              <item name="eg-01-ruby-jwt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,20 +297,20 @@
       <workItem from="1562597333597" duration="28319000" />
       <workItem from="1562774788814" duration="12769000" />
       <workItem from="1562872618935" duration="574000" />
-      <workItem from="1562964482192" duration="3800000" />
+      <workItem from="1562964482192" duration="10835000" />
+      <workItem from="1563288277579" duration="5922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62680000" />
+    <option name="totallyTimeSpent" value="75637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15808298" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.1602289" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.500813" side_tool="true" visible="true" weight="0.1602289" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -354,7 +321,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" visible="true" weight="0.24447174" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" visible="true" weight="0.24447174" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.4127764" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -440,31 +407,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/agreements/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="62" column="4" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/agreement.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -478,17 +424,94 @@
         <state relative-caret-position="-2172" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb">
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/models/return_url_request.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="38">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/client/auth/oauth.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/template_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="626">
+          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/agreements_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/agreement.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/webhook_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/agreements/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/local_env.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="717" selection-start-column="717" selection-end-column="717" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/agreements/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs26/string.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="1293" column="8" selection-start-line="1293" selection-start-column="8" selection-end-line="1293" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="118" selection-start-line="39" selection-start-column="118" selection-end-line="39" selection-end-column="118" />
         </state>
       </provider>
     </entry>
@@ -501,92 +524,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+        <state relative-caret-position="-54">
+          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb">
+    <entry file="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_helper.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/client/api_client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="-472">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf_agreements/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="64" lean-forward="true" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/webhook_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1333">
-          <caret line="107" column="22" lean-forward="true" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+        <state relative-caret-position="189">
+          <caret line="9" column="58" lean-forward="true" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/api/envelopes_api.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7707">
-          <caret line="367" column="8" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
+        <state relative-caret-position="4110">
+          <caret line="847" column="22" lean-forward="true" selection-start-line="847" selection-start-column="22" selection-end-line="847" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/models/return_url_request.rb">
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/client/auth/oauth.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="185">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/local_env.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="21">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="132" column="88" selection-start-line="132" selection-start-column="88" selection-end-line="132" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/template_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/agreements/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/agreements_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1806">
-          <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        <state relative-caret-position="366">
+          <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
         </state>
       </provider>
     </entry>

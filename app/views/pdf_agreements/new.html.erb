@@ -24,7 +24,15 @@
     <%= f.label :orders, "Routing Order: "%>
     <%= f.text_field :orders %>
     <span>Please separate order by commas :)</span>
+    <br />
 
+    <%= f.label :number_of_docs, "Specify Number of Documents:" %>
+    <%= f.select :number_of_docs, options_for_select(
+        @number_of_documents.map { |num|
+          [num, num]
+        }
+    )%>
+    <br /> <br />
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
 </div>
