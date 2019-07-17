@@ -6,10 +6,15 @@
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/ds_config.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/example_base.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../eg-01-ruby-jwt/main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/agreements/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/agreements/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qs-ruby/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/../../qs-ruby/.ruby-version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qs-ruby/app/controllers/embedded_signing_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../qs-ruby/app/controllers/embedded_signing_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qs-ruby/app/controllers/list_envelopes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../qs-ruby/app/controllers/list_envelopes_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qs-ruby/app/controllers/send_envelope_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../qs-ruby/app/controllers/send_envelope_controller.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -33,8 +38,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-174">
-              <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+            <state relative-caret-position="403">
+              <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/api/envelopes_api.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="3610" column="8" selection-start-line="3610" selection-start-column="8" selection-end-line="3610" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../qs-ruby/app/controllers/list_envelopes_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="41" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -42,17 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/agreements/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="110" lean-forward="true" selection-start-line="32" selection-start-column="110" selection-end-line="32" selection-end-column="110" />
+            <state relative-caret-position="84">
+              <caret line="4" column="34" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -61,12 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>return</find>
-      <find>http://localhost:3000/agreements</find>
-      <find>notice</find>
-      <find>has bee</find>
-      <find>cc</find>
-      <find>has been</find>
       <find>created</find>
       <find>pending</find>
       <find>num</find>
@@ -91,6 +99,12 @@
       <find>generate_con</find>
       <find>get_corre</find>
       <find>generate_corr</find>
+      <find>preview</find>
+      <find>envelope_ids</find>
+      <find>envelope</find>
+      <find>list_stat</find>
+      <find>list_status_change</find>
+      <find>exceptio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,9 +131,9 @@
         <option value="$PROJECT_DIR$/db/migrate/20190624180146_create_agreements.rb" />
         <option value="$PROJECT_DIR$/app/views/pdf_agreements/new.html.erb" />
         <option value="$PROJECT_DIR$/config/local_env.yml" />
-        <option value="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/agreements/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb" />
       </list>
     </option>
   </component>
@@ -142,25 +156,18 @@
           <expand>
             <path>
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
+              <item name="qs-ruby" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
+              <item name="qs-ruby" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
+              <item name="qs-ruby" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="docusign_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docusign_test" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="agreements" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,12 +305,12 @@
       <workItem from="1562774788814" duration="12769000" />
       <workItem from="1562872618935" duration="574000" />
       <workItem from="1562964482192" duration="10835000" />
-      <workItem from="1563288277579" duration="13176000" />
+      <workItem from="1563288277579" duration="17663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82891000" />
+    <option name="totallyTimeSpent" value="87378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -499,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/api/envelopes_api.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4110">
-          <caret line="847" column="22" lean-forward="true" selection-start-line="847" selection-start-column="22" selection-end-line="847" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/client/auth/oauth.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -523,13 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/local_env.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -568,17 +561,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/local_env.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="717" lean-forward="true" selection-start-column="29" selection-end-column="717" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../qs-ruby/app/controllers/list_envelopes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="41" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/docusign_esign-2.0.0/lib/docusign_esign/api/envelopes_api.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="3610" column="8" selection-start-line="3610" selection-start-column="8" selection-end-line="3610" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="84">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pdf_agreements_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+        <state relative-caret-position="403">
+          <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
         </state>
       </provider>
     </entry>

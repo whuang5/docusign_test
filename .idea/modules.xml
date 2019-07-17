@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/docusign_test.iml" filepath="$PROJECT_DIR$/.idea/docusign_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../eg-01-ruby-jwt/.idea/eg-01-ruby-jwt.iml" filepath="$PROJECT_DIR$/../../eg-01-ruby-jwt/.idea/eg-01-ruby-jwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../qs-ruby/.idea/qs-ruby.iml" filepath="$PROJECT_DIR$/../../qs-ruby/.idea/qs-ruby.iml" />
     </modules>
   </component>
 </project>

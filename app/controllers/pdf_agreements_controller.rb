@@ -222,8 +222,19 @@ class PdfAgreementsController < ApplicationController
 
     #Create Random API Call
     envelopes_api = configure_envelopes_api
-    results = envelopes_api.list_documents(account_id, envelope_id)
-    puts results
+    envelope_ids_request = DocuSign_eSign::EnvelopeIdsRequest.new(
+        envelopeIds: [envelope_id.to_s]
+    )
+
+    options =  DocuSign_eSign::ListStatusOptions.new
+    options.from_date = (Date.today - 1).strftime("%Y/%m/%d")
+
+    begin
+      results = envelopes_api.list_status(account_id, envelope_ids_request, options)
+      puts results
+    rescue DocuSign_eSign::ApiError => e
+      puts e
+    end
 
     redirect_to preview_url
   end
@@ -297,7 +308,11 @@ class PdfAgreementsController < ApplicationController
 
   #Get Correction View URL
   def get_correct_view_url(envelopes_api, account_id, envelope_id, correct_view_request)
+    begin
     edit_view_results = envelopes_api.create_correct_view(account_id, envelope_id, correct_view_request)
+    rescue Exception => e
+      puts e
+    end
     edit_view_results.url
   end
 

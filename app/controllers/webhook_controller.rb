@@ -66,6 +66,9 @@ class WebhookController < ApplicationController
     email = email.downcase
     status = status.downcase
 
+    puts "EMAIL: " + email
+    puts "STATUS: " + status
+
     document_id = envelope_status['DocumentStatuses']['DocumentStatus']['ID']
     envelope_id = envelope_status['EnvelopeID']
 
@@ -83,6 +86,10 @@ class WebhookController < ApplicationController
 
     #Get Agreement variables
     @agreement = Agreement.find_by(:envelope_id => envelope_id)
+
+    puts "AGREEMENT: "
+    puts @agreement
+
     @agreement.status = status #change status to new status
     original_name = @agreement.original_name
 
