@@ -6,7 +6,6 @@ class PdfAgreementsController < ApplicationController
 
   def show
     @agreement = Agreement.find(params[:id])
-
     respond_to do |format|
       format.html
       format.pdf do
@@ -109,7 +108,6 @@ class PdfAgreementsController < ApplicationController
 
       #Send Document
       begin
-        puts "Envelope definition params:: #{envelope_definition}"
         results = envelopes_api.create_envelope(account_id, envelope_definition)
 
         #Save Edit View
@@ -152,7 +150,45 @@ class PdfAgreementsController < ApplicationController
     #Get Edit View URL & Redirect
     edit_view_url = get_edit_view_url(envelopes_api, account_id, @agreement.envelope_id, return_url_request)
     puts "On-demand URL: #{edit_view_url}"
-    redirect_to edit_view_url, notice: "The Agreement has been sent to the recipient!"
+    redirect_to edit_view_url
+  end
+
+  def generate_console_view
+    #Create redirect URL
+    account_id = ENV['DOCUSIGN_ACCOUNT_ID']
+    @agreement = Agreement.find(params[:id])
+    envelope_id = @agreement.envelope_id
+
+    #Configure Envelopes API
+    envelopes_api = configure_envelopes_api
+    console_view_request = DocuSign_eSign::ConsoleViewRequest.new(
+        envelopeId: envelope_id,
+        returnUrl: ENV['DOCUSIGN_RETURN_URL']
+    )
+
+    #Get Edit View URL & Redirect
+    console_view_url = get_console_view_url(envelopes_api, account_id, console_view_request)
+    puts "Console View URL: #{console_view_url}"
+    redirect_to console_view_url
+  end
+
+  def generate_correct_view
+    #Create redirect URL
+    account_id = ENV['DOCUSIGN_ACCOUNT_ID']
+    @agreement = Agreement.find(params[:id])
+    envelope_id = @agreement.envelope_id
+
+    #Configure Envelopes API
+    envelopes_api = configure_envelopes_api
+    correct_view_request = DocuSign_eSign::CorrectViewRequest.new(
+        returnUrl: ENV['DOCUSIGN_RETURN_URL'],
+        suppressNavigation: "false"
+    )
+
+    #Get Edit View URL & Redirect
+    correct_view_url = get_correct_view_url(envelopes_api, account_id, envelope_id, correct_view_request)
+    puts "Correct View URL: #{correct_view_url}"
+    redirect_to correct_view_url
   end
 
   def generate_sender_view
@@ -168,9 +204,10 @@ class PdfAgreementsController < ApplicationController
     #Get Edit View URL & Redirect
     sender_view_url = get_sender_view_url(envelopes_api, account_id, @agreement.envelope_id, return_url_request)
     puts "On-demand URL: #{sender_view_url}"
-    redirect_to sender_view_url, notice: "The Agreement has been sent to the recipient!"
+    redirect_to sender_view_url
   end
 
+  #Redirect to saved preview_url
   def redirect_preview_url
     @agreement = Agreement.find(params[:id])
     preview_url = @agreement.preview_url
@@ -249,6 +286,18 @@ class PdfAgreementsController < ApplicationController
   #Get edit View URL
   def get_edit_view_url(envelopes_api, account_id, envelope_id, return_url_request)
     edit_view_results = envelopes_api.create_edit_view(account_id, envelope_id, return_url_request)
+    edit_view_results.url
+  end
+
+  #Get Console View URL
+  def get_console_view_url(envelopes_api, account_id, console_view_request)
+    edit_view_results = envelopes_api.create_console_view(account_id, console_view_request)
+    edit_view_results.url
+  end
+
+  #Get Correction View URL
+  def get_correct_view_url(envelopes_api, account_id, envelope_id, correct_view_request)
+    edit_view_results = envelopes_api.create_correct_view(account_id, envelope_id, correct_view_request)
     edit_view_results.url
   end
 

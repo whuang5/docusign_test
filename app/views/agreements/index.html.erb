@@ -14,7 +14,9 @@
          <th>Names</th>
          <th>Download Link</th>
          <th>Pre-generated Link</th>
-         <th>On-Demand Link</th>
+         <th>Edit View Link</th>
+         <th>Console View Link</th>
+         <th>Correct View Link</th>
          <th>Status </th>
          <th> </th>
       </tr>
@@ -25,8 +27,10 @@
          <tr>
             <td><%= a.names %></td>
             <td><%= link_to "Download Agreement", a.attachment_url %></td>
-            <td><%= link_to "Preview URL", a.preview_url, target: "_blank" %></td>
-            <td><%= link_to "On-Demand URL", "/pdf_agreements/preview?id=#{a.id}", target: "_blank" %></td>
+            <td><%= link_to "Saved Preview URL", a.preview_url, target: "_blank" %></td>
+            <td><%= link_to "Edit View URL", "/pdf_agreements/preview?id=#{a.id}", target: "_blank" %></td>
+            <td><%= link_to "Console View URL", "/pdf_agreements/console?id=#{a.id}", target: "_blank" %></td>
+            <td><%= link_to "Correct View URL", "/pdf_agreements/correct?id=#{a.id}", target: "_blank" %></td>
             <td><%= a.status %></td>
             <td><%= button_to "Delete",  a, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{a.names}?" %></td>
          </tr>
