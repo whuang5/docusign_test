@@ -1,4 +1,40 @@
 // Place all the styles related to the Agreements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import "bootstrap";
+
+.action-button {
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  height: 38px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 0;
+  transition: all 0.2s;
+  outline: none;
+  color: #252729;
+  background-color: #FFCF71;
+  border: 1px solid #ffb525;
+  margin-right: 15px;
+  display: inline-block !important;
+}
+
+.action-button:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.navigation-bar {
+  margin-top: 20px;
+  margin-left: 20px;
+}
